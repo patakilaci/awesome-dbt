@@ -239,6 +239,7 @@ Monitoring, anomaly detection and alerting on the data your models build.
 ## CI/CD
 
 Ship changes safely: slim CI, data diffs, deployment patterns and pull request workflows.
+- [dbt-hodor](https://github.com/alaturqua/dbt-hodor) - Reuses unchanged models and rebuilds only those whose code or upstream data changed, in scheduled runs and in slim CI. A free, self-hosted alternative to dbt State.
 - [speedrunner](https://github.com/anthonyGosme/speedrunner) - Makes every dbt command start faster by keeping dbt preloaded in a background daemon and forking it per call, with no configuration. Measured: `dbt ls` 3.9 s to 1.2 s, `dbt --help` 2.7 s to 30 ms, same output as plain dbt.
 - [reladiff](https://github.com/erezsh/reladiff) - Diff large datasets within or across databases. Maintained continuation of Datafold's data-diff, which is archived.
 - [dbt-plan](https://github.com/PresentJay/dbt-plan) - `terraform plan` for dbt: diffs compiled SQL between two revisions to predict the DDL `dbt run` would emit. Names the columns an `on_schema_change: sync_all_columns` model will drop, the downstream models and data tests that drop breaks, and enforced-contract violations. Reads files only -- no warehouse connection -- so it runs locally before `dbt run` and on fork pull requests, where warehouse-connected checks cannot.
@@ -380,7 +381,6 @@ Repository layout, multi-project setups and dbt Mesh.
 
 Run metadata, warehouse cost and query performance.
 
-- [dbt-hodor](https://github.com/alaturqua/dbt-hodor) - Reuses unchanged models and rebuilds only when their code or upstream data changed, cutting run time and warehouse cost. A free, self-hosted alternative to dbt State.
 - [dbt-query-tags](https://github.com/get-select/dbt-query-tags) - Automatically tag dbt-issued queries with informative metadata, on multiple warehouses (successor of dbt-snowflake-query-tags).
 - [dbt_artifacts](https://github.com/brooklyn-data/dbt_artifacts) - Builds a mart of tables from dbt artifacts in your warehouse, to monitor runs, models and tests over time.
 - [dbt-dag-monitoring](https://github.com/techindicium/dbt-dag-monitoring) - A dbt package for monitoring Airflow DAGs and tasks.
